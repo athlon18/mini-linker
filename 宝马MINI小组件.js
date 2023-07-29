@@ -809,7 +809,7 @@ class Widget extends Base {
 
     async checkUpdate() {
         try {
-            let req = new Request(encodeURI('https://gitee.com/cvnc/BMW/raw/master/Version.json'));
+            let req = new Request(encodeURI('https://raw.githubusercontent.com/athlon18/mini-linker/main/ver.json'));
             let res = await req.loadJSON();
             let Version = res.Version
             let VersionLog = res.VersionLog
@@ -829,7 +829,7 @@ class Widget extends Base {
         try {
             let N = "宝马MINI小组件";
             let U = "宝马MINI小组件.js";
-            let H = "https://gitee.com/cvnc/BMW/raw/master/";
+            let H = "https://raw.githubusercontent.com/athlon18/mini-linker/main/";
             let F = FileManager[module.filename.includes("Documents/iCloud~")?"iCloud":"local"]();
             F.write(F.joinPath(F.documentsDirectory(),`${N}.js`),await new Request(encodeURI(`${H}${U}`)).load());
             Safari.open("scriptable:///run?scriptName=");
